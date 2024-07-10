@@ -11,7 +11,7 @@
     padding: 10px;
     border: 2px solid var(--input-border-color);
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 20px;
     vertical-align: top;
     box-sizing: border-box;
@@ -24,8 +24,9 @@
     vertical-align: top;
     width: 58px;
     height: 44px;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 44px;
+    text-align: center;
     background-color: var(--add-button-background-color);
     color: var(--add-button-text-color);
     font-weight: bold;

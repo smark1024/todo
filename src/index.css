@@ -136,9 +136,10 @@ table {
 
 #root {
     overflow: hidden;
-    width: 100%;
+    width: 91.11111%;
     max-width: 720px;
     min-width: 320px;
+    margin: auto;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
