@@ -1,0 +1,41 @@
+.addTodoForm {
+    display: block;
+    position: relative;
+    width: calc(100% - 62px);
+    height: 44px;
+    padding-right: 62px;
+}
+
+.addTodoInput {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--input-border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 20px;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.addTodoButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    vertical-align: top;
+    width: 58px;
+    height: 44px;
+    font-size: 20px;
+    line-height: 44px;
+    background-color: var(--add-button-background-color);
+    color: var(--add-button-text-color);
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.addTodoButton:hover {
+    background-color: var(--button-hover-background-color);
+}

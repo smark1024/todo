@@ -1,0 +1,50 @@
+.header {
+    position: relative;
+    background-color: var(--header-background-color);
+    color: var(--header-text-color);
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.header ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.header button {
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 22px;
+}
+
+.header button.selected,
+.header button:hover {
+    background-color: var(--button-hover-background-color);
+}
+
+.header > button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 38px;
+    height: 38px;
+    font-size: 0;
+    line-height: 0;
+    padding: 0;
+}
+.header > button > svg {
+    width: 18px;
+    height: auto;
+}
