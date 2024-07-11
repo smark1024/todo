@@ -5,14 +5,16 @@ import styles from "./TodoList.module.css";
 
 export default function TodoList({ filter }) {
     const [todos, setTodos] = useState(readTodosFromLocalStorage);
-
     const listEndRef = useRef(null);
+    const isCheckBoxClickedRef = useRef(false);
+    const isFilterChangedRef = useRef(false);
 
     const handleAdd = (todo) => {
         setTodos([...todos, todo]);
     };
 
     const handleUpdate = (updated) => {
+        isCheckBoxClickedRef.current = true;
         setTodos(todos.map((t) => (t.id === updated.id ? updated : t)));
     };
 
@@ -25,10 +27,19 @@ export default function TodoList({ filter }) {
             listEndRef.current.scrollIntoView({ behavior: "smooth" });
         }
     };
+
     useEffect(() => {
-        scrollToBottom();
+        if (!isCheckBoxClickedRef.current && !isFilterChangedRef.current) {
+            scrollToBottom();
+        }
+        isCheckBoxClickedRef.current = false;
+        isFilterChangedRef.current = false;
         localStorage.setItem("todos", JSON.stringify(todos));
     }, [todos]);
+
+    useEffect(() => {
+        isFilterChangedRef.current = true;
+    }, [filter]);
 
     const filtered = getFilteredItems(todos, filter);
 
@@ -46,7 +57,6 @@ export default function TodoList({ filter }) {
 }
 
 function readTodosFromLocalStorage() {
-    console.log(readTodosFromLocalStorage);
     const todos = localStorage.getItem("todos");
     return todos ? JSON.parse(todos) : [];
 }
